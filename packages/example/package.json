@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint src && tsc --noEmit"
+    "lint": "eslint src && tsc --noEmit",
+    "test": "echo \"No tests yet\""
   },
   "dependencies": {
     "next": "^10.0.0",
