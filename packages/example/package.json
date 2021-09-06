@@ -1,0 +1,17 @@
+{
+  "name": "example",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint src && tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "^10.0.0",
+    "next-query-params": "*",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  }
+}
