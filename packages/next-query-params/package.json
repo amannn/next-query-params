@@ -1,6 +1,6 @@
 {
   "name": "next-query-params",
-  "version": "1.0.2",
+  "version": "2.0.1",
   "sideEffects": false,
   "license": "MIT",
   "description": "Convenient state management of query parameters in Next.js apps.",
@@ -39,8 +39,8 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "11.0.0",
     "@types/react": "^16.9.56",
-    "eslint-config-molindo": "5.0.1",
     "eslint": "7.4.0",
+    "eslint-config-molindo": "5.0.1",
     "next": "^10.0.0",
     "query-string": "7.0.1",
     "react": "^17.0.0",
@@ -51,4 +51,3 @@
     "use-query-params": "1.2.3"
   }
 }
-

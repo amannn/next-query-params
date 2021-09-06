@@ -5,4 +5,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 2.0.1 (2021-09-06)
 
-**Note:** Version bump only for package next-query-params
+**Note:** Version bump only for package example
