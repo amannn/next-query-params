@@ -1,0 +1,18 @@
+name: main
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  build:
+    name: Build, lint, and test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - uses: bahmutov/npm-install@v1
+      - run: yarn workspace next-query-params run build
+      - run: yarn workspaces run lint
+      - run: yarn workspaces run test --ci --maxWorkers=2
+      - run: yarn workspace example run build
