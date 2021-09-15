@@ -7,7 +7,7 @@
   "author": "Jan Amann <jan@amann.me>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/amannn/react-hooks/tree/master/packages/next-query-params"
+    "url": "https://github.com/amannn/next-query-params"
   },
   "keywords": [
     "react",
