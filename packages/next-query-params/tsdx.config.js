@@ -12,7 +12,7 @@ const commonJsDependencies = [
   'decode-uri-component',
   'filter-obj',
   'split-on-first',
-  'strict-uri-encode',
+  'strict-uri-encode'
 ];
 
 module.exports = {
@@ -34,10 +34,10 @@ module.exports = {
       commonjs({
         include: commonJsDependencies.map(
           (name) => `../../node_modules/${name}/index.js`
-        ),
+        )
       })
     );
 
     return config;
-  },
+  }
 };

@@ -4,6 +4,6 @@ module.exports = {
   extends: ['molindo/typescript', 'molindo/react'],
   rules: {
     'react/react-in-jsx-scope': 'off',
-    'react/jsx-no-bind': 'off',
-  },
-};
+    'react/jsx-no-bind': 'off'
+  }
+}

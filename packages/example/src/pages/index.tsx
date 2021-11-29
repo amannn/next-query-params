@@ -2,9 +2,9 @@ import {
   useQueryParam,
   StringParam,
   withDefault,
-  BooleanParam,
+  BooleanParam
 } from 'next-query-params';
-import { ChangeEvent } from 'react';
+import {ChangeEvent} from 'react';
 
 export default function Index() {
   const [name, setName] = useQueryParam('name', withDefault(StringParam, ''));
