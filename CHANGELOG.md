@@ -5,7 +5,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 2.0.4 (2021-11-30)
 
-**Note:** Version bump only for package root
+
+### Bug Fixes
+
+* fix: Update router object `search` after changes and incorporate `hash` ([#6](https://github.com/amannn/next-query-params/pull/6))
 
 
 
