@@ -4,7 +4,7 @@ import {
   withDefault,
   BooleanParam
 } from 'next-query-params';
-import {useRouter} from 'next/dist/client/router';
+import {useRouter} from 'next/router';
 import {ChangeEvent} from 'react';
 
 export default function Index() {
