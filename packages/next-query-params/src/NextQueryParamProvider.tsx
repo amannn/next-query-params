@@ -36,19 +36,20 @@ function NextQueryParamProvider({children, ...rest}: Props) {
   }, [router.asPath, router.isReady]);
 
   const history = useMemo(() => {
-    const createUpdater =
-      (updater: typeof router.push) =>
-      ({ search, hash }: Location) =>
-        updater(
-          { pathname: router.pathname, query: router.query, search, hash },
-          { search, pathname, hash },
-          { shallow: true, scroll: false }
+    function createUpdater(routeFn: typeof router.push) {
+      return function updater({hash, search}: Location) {
+        routeFn(
+          {pathname: router.pathname, query: router.query, search, hash},
+          {search, pathname, hash},
+          {shallow: true, scroll: false}
         );
+      };
+    }
 
     return {
       push: createUpdater(router.push),
       replace: createUpdater(router.replace),
-      location,
+      location
     };
   }, [location, pathname, router]);
 

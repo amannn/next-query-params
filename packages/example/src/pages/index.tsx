@@ -4,12 +4,12 @@ import {
   withDefault,
   BooleanParam
 } from 'next-query-params';
-import { useRouter } from 'next/dist/client/router';
+import {useRouter} from 'next/dist/client/router';
 import {ChangeEvent} from 'react';
 
 export default function Index() {
   const [name, setName] = useQueryParam('name', withDefault(StringParam, ''));
-  const router = useRouter()
+  const router = useRouter();
   const [available, setAvailable] = useQueryParam(
     'available',
     withDefault(BooleanParam, false)
@@ -37,16 +37,18 @@ export default function Index() {
         />
       </label>
 
-      <hr/>
-      <p> after clicking on: <a href="#sync">a hash link</a> the url should contain the hash despite changing params</p>
-      <hr/>
+      <hr />
+      <p>
+        after clicking on: <a href="#sync">a hash link</a> the url should
+        contain the hash despite changing params
+      </p>
+      <hr />
 
-      <p>the router query object provided by next should contain all query params:</p>
-      <pre>
-        {JSON.stringify(router.query, null, 2)}
-      </pre>
-
-
+      <p>
+        the router query object provided by next should contain all query
+        params:
+      </p>
+      <pre>{JSON.stringify(router.query, null, 2)}</pre>
     </div>
   );
 }
