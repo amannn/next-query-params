@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.1.0 (2021-12-15)
+
+
+### Features
+
+* Support Next.js 12 ([#8](https://github.com/amannn/next-query-params/issues/8)) ([6c766d2](https://github.com/amannn/next-query-params/commit/6c766d2095cdbc587f2555cea35ff82b2d30c4f6))
+
+
+
+
+
 ## 2.0.5 (2021-11-30)
 
 **Note:** Version bump only for package next-query-params
