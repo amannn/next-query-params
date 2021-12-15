@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "eslint": "7.4.0",
-    "eslint-config-molindo": "5.0.1"
+    "eslint-config-molindo": "5.0.1",
+    "typescript": "4.5.4"
   }
 }
