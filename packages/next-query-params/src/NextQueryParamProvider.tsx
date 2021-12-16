@@ -39,8 +39,8 @@ function NextQueryParamProvider({children, ...rest}: Props) {
     function createUpdater(routeFn: typeof router.push) {
       return function updater({hash, search}: Location) {
         routeFn(
-          {pathname: router.pathname, query: router.query, search, hash},
-          {search, pathname, hash},
+          {pathname: router.pathname, search, hash},
+          {pathname, search, hash},
           {shallow: true, scroll: false}
         );
       };
