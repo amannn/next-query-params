@@ -11,7 +11,7 @@ type Props = Omit<
 
 function NextQueryParamProvider({children, ...rest}: Props) {
   const router = useRouter();
-  const match = router.asPath.match(/[^?]+/);
+  const match = router.asPath.match(/[^?|#]+/);
   const pathname = match ? match[0] : router.asPath;
 
   const location = useMemo(() => {
