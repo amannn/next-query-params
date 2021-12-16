@@ -16,7 +16,10 @@ export default function Index() {
     withDefault(BooleanParam, false)
   );
 
-  const [params, setParams] = useQueryParams({'name': StringParam, 'available': BooleanParam})
+  const [, setParams] = useQueryParams({
+    name: StringParam,
+    available: BooleanParam
+  });
 
   function onNameInputChange(event: ChangeEvent<HTMLInputElement>) {
     setName(event.target.value);
@@ -26,8 +29,8 @@ export default function Index() {
     setAvailable(event.target.checked);
   }
 
-  function onClearParams(){
-    setParams({available: undefined, name: undefined})
+  function onClearParams() {
+    setParams({available: undefined, name: undefined});
   }
 
   return (
@@ -56,8 +59,9 @@ export default function Index() {
         params:
       </p>
       <pre>{JSON.stringify(router.query, null, 2)}</pre>
-      <button onClick={onClearParams}>clear</button>
-
+      <button onClick={onClearParams} type="button">
+        clear
+      </button>
     </div>
   );
 }

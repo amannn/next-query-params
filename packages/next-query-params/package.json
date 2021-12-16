@@ -22,7 +22,7 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "echo \"No tests yet\"",
-    "lint": "eslint src && tsc",
+    "lint": "eslint src --fix && tsc",
     "prepublishOnly": "yarn test && yarn lint && yarn build && cp ../../README.md ."
   },
   "main": "dist/index.js",
