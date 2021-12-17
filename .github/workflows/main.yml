@@ -3,10 +3,9 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
-  build:
-    name: Build, lint, and test
+  main:
+    name: Build, lint and test
     runs-on: ubuntu-latest
-    container: cypress/browsers:node14.17.0-chrome91-ff89
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -15,5 +14,13 @@ jobs:
       - uses: bahmutov/npm-install@v1
       - run: yarn workspace next-query-params run build
       - run: yarn workspaces run lint
-      - run: yarn workspace example run build
-      - run: yarn workspaces run test --ci --maxWorkers=2
+      - run: yarn workspace next-query-params run test
+
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: cypress-io/github-action@v2
+        with:
+          build: yarn workspace next-query-params run build && yarn workspace example run build
+          working-directory: packages/example
