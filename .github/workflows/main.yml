@@ -22,5 +22,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: cypress-io/github-action@v2
         with:
+          start: yarn start
           build: yarn workspace next-query-params run build && yarn workspace example run build
           working-directory: packages/example
