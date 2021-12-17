@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.1.2 (2021-12-17)
+
+
+### Bug Fixes
+
+* Handle clearing of parameters and adding of parameters with an existing hash ([#9](https://github.com/amannn/next-query-params/issues/9)) ([0640b57](https://github.com/amannn/next-query-params/commit/0640b5739141bfc36b5e60bb8c87b32a6d53ac10))
+
+
+
+
+
 ## 2.1.1 (2021-12-17)
 
 **Note:** Version bump only for package next-query-params
