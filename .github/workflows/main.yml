@@ -20,10 +20,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Install dependencies
+        uses: cypress-io/github-action@v2
+        with:
+          runTests: false
+      - run: yarn workspace next-query-params run build
       - uses: cypress-io/github-action@v2
         with:
           start: yarn start
-          build: |
-            yarn workspace next-query-params run build
-            yarn build
+          build: yarn build
           working-directory: packages/example
