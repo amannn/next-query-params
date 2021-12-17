@@ -23,5 +23,7 @@ jobs:
       - uses: cypress-io/github-action@v2
         with:
           start: yarn start
-          build: 'yarn workspace next-query-params run build && yarn build'
+          build: |
+            yarn workspace next-query-params run build
+            yarn build
           working-directory: packages/example
