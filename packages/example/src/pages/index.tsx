@@ -2,7 +2,8 @@ import {
   useQueryParam,
   StringParam,
   withDefault,
-  BooleanParam
+  BooleanParam,
+  useQueryParams
 } from 'next-query-params';
 import {useRouter} from 'next/router';
 import {ChangeEvent} from 'react';
@@ -15,12 +16,21 @@ export default function Index() {
     withDefault(BooleanParam, false)
   );
 
+  const [, setParams] = useQueryParams({
+    name: StringParam,
+    available: BooleanParam
+  });
+
   function onNameInputChange(event: ChangeEvent<HTMLInputElement>) {
     setName(event.target.value);
   }
 
   function onAvailableInputChange(event: ChangeEvent<HTMLInputElement>) {
     setAvailable(event.target.checked);
+  }
+
+  function onClearParams() {
+    setParams({available: undefined, name: undefined});
   }
 
   return (
@@ -42,6 +52,9 @@ export default function Index() {
         Router query:
         <pre>{JSON.stringify(router.query, null, 2)}</pre>
       </label>
+      <button onClick={onClearParams} type="button">
+        clear
+      </button>
     </div>
   );
 }

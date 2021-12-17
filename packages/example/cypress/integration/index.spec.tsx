@@ -43,3 +43,24 @@ it('keeps track of hash links', () => {
   cy.get('label:contains("Available:") input').click();
   assertUrl('?available=0#hash');
 });
+
+it('should clear all params', () => {
+  cy.visit('?available=1&name=harry')
+  cy.get('button:contains("clear")').click();
+  assertUrl('')
+  assertRouterQuery({})
+});
+
+it('should clear all params while the hash remains', () => {
+  cy.visit('?available=1&name=harry#hash')
+  cy.get('button:contains("clear")').click();
+  assertUrl('#hash')
+  assertRouterQuery({})
+});
+
+it('should add query params correctly when a hash is already active', () => {
+  cy.visit('#hash')
+  cy.get('label:contains("Available:") input').click();
+  assertUrl('?available=1#hash')
+  assertRouterQuery({available: '1'});
+});

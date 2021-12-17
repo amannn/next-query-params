@@ -9,9 +9,11 @@ type Props = Omit<
   'ReactRouterRoute' | 'reachHistory' | 'history' | 'location'
 >;
 
+const pathnameRegex = /[^?#]+/u;
+
 function NextQueryParamProvider({children, ...rest}: Props) {
   const router = useRouter();
-  const match = router.asPath.match(/[^?]+/);
+  const match = router.asPath.match(pathnameRegex);
   const pathname = match ? match[0] : router.asPath;
 
   const location = useMemo(() => {
@@ -31,7 +33,7 @@ function NextQueryParamProvider({children, ...rest}: Props) {
       // On the server side we only need a subset of the available
       // properties of `Location`. The other ones are only necessary
       // for interactive features on the client.
-      return {search: router.asPath.replace(/[^?]+/u, '')} as Location;
+      return {search: router.asPath.replace(pathnameRegex, '')} as Location;
     }
   }, [router.asPath, router.isReady]);
 
@@ -39,8 +41,8 @@ function NextQueryParamProvider({children, ...rest}: Props) {
     function createUpdater(routeFn: typeof router.push) {
       return function updater({hash, search}: Location) {
         routeFn(
-          {pathname: router.pathname, query: router.query, search, hash},
-          {search, pathname, hash},
+          {pathname: router.pathname, search, hash},
+          {pathname, search, hash},
           {shallow: true, scroll: false}
         );
       };
