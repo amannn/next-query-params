@@ -31,7 +31,7 @@ function NextQueryParamProvider({children, ...rest}: Props) {
       // On the server side we only need a subset of the available
       // properties of `Location`. The other ones are only necessary
       // for interactive features on the client.
-      return {search: router.asPath.replace(/[^?]+/u, '')} as Location;
+      return {search: router.asPath.replace(/[^?|#]+/u, '')} as Location;
     }
   }, [router.asPath, router.isReady]);
 
