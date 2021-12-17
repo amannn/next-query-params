@@ -3,8 +3,8 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
-  build:
-    name: Build, lint, and test
+  main:
+    name: Build, lint and test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -14,5 +14,19 @@ jobs:
       - uses: bahmutov/npm-install@v1
       - run: yarn workspace next-query-params run build
       - run: yarn workspaces run lint
-      - run: yarn workspaces run test --ci --maxWorkers=2
-      - run: yarn workspace example run build
+      - run: yarn workspace next-query-params run test
+
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        uses: cypress-io/github-action@v2
+        with:
+          runTests: false
+      - run: yarn workspace next-query-params run build
+      - uses: cypress-io/github-action@v2
+        with:
+          start: yarn start
+          build: yarn build
+          working-directory: packages/example

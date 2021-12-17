@@ -35,30 +35,23 @@ export default function Index() {
 
   return (
     <div>
-      <p>
-        My name is <input onChange={onNameInputChange} value={name} /> ({name})
-      </p>
       <label>
-        Available{' '}
+        Name: <input onChange={onNameInputChange} value={name} /> ({name})
+      </label>
+      <label>
+        Available:{' '}
         <input
           checked={available}
           onChange={onAvailableInputChange}
           type="checkbox"
         />
       </label>
-
+      <a href="#hash">Hash link</a>
       <hr />
-      <p>
-        after clicking on: <a href="#sync">a hash link</a> the url should
-        contain the hash despite changing params
-      </p>
-      <hr />
-
-      <p>
-        the router query object provided by next should contain all query
-        params:
-      </p>
-      <pre>{JSON.stringify(router.query, null, 2)}</pre>
+      <label>
+        Router query:
+        <pre>{JSON.stringify(router.query, null, 2)}</pre>
+      </label>
       <button onClick={onClearParams} type="button">
         clear
       </button>
