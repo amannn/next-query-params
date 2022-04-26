@@ -11,7 +11,7 @@ type Props = Omit<
 
 const pathnameRegex = /[^?#]+/u;
 
-function NextQueryParamProvider({children, ...rest}: Props) {
+function NextQueryParamProvider({shallow=true, children, ...rest}: Props) {
   const router = useRouter();
   const match = router.asPath.match(pathnameRegex);
   const pathname = match ? match[0] : router.asPath;
@@ -43,7 +43,7 @@ function NextQueryParamProvider({children, ...rest}: Props) {
         routeFn(
           {pathname: router.pathname, search, hash},
           {pathname, search, hash},
-          {shallow: true, scroll: false}
+          {shallow: shallow, scroll: false}
         );
       };
     }
