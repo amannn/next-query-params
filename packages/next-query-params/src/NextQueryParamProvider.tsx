@@ -7,7 +7,7 @@ import { QueryParamProvider } from 'use-query-params';
 type Props = Omit<
   ComponentProps<typeof QueryParamProvider>,
   'ReactRouterRoute' | 'reachHistory' | 'history' | 'location'
-> & { omit: boolean };
+> & { shallow: boolean };
 
 const pathnameRegex = /[^?#]+/u;
 
