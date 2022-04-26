@@ -1,17 +1,17 @@
-import {useRouter} from 'next/router';
-import React, {ComponentProps, memo, useMemo} from 'react';
+import { useRouter } from 'next/router';
+import React, { ComponentProps, memo, useMemo } from 'react';
 // This dependency is bundled
 // eslint-disable-next-line import/no-extraneous-dependencies
-import {QueryParamProvider} from 'use-query-params';
+import { QueryParamProvider } from 'use-query-params';
 
 type Props = Omit<
   ComponentProps<typeof QueryParamProvider>,
   'ReactRouterRoute' | 'reachHistory' | 'history' | 'location'
->;
+> & { omit: boolean };
 
 const pathnameRegex = /[^?#]+/u;
 
-function NextQueryParamProvider({shallow=true, children, ...rest}: Props) {
+function NextQueryParamProvider({ shallow = true, children, ...rest }: Props) {
   const router = useRouter();
   const match = router.asPath.match(pathnameRegex);
   const pathname = match ? match[0] : router.asPath;
@@ -27,23 +27,23 @@ function NextQueryParamProvider({shallow=true, children, ...rest}: Props) {
       if (router.isReady) {
         return window.location;
       } else {
-        return {search: ''} as Location;
+        return { search: '' } as Location;
       }
     } else {
       // On the server side we only need a subset of the available
       // properties of `Location`. The other ones are only necessary
       // for interactive features on the client.
-      return {search: router.asPath.replace(pathnameRegex, '')} as Location;
+      return { search: router.asPath.replace(pathnameRegex, '') } as Location;
     }
   }, [router.asPath, router.isReady]);
 
   const history = useMemo(() => {
     function createUpdater(routeFn: typeof router.push) {
-      return function updater({hash, search}: Location) {
+      return function updater({ hash, search }: Location) {
         routeFn(
-          {pathname: router.pathname, search, hash},
-          {pathname, search, hash},
-          {shallow: shallow, scroll: false}
+          { pathname: router.pathname, search, hash },
+          { pathname, search, hash },
+          { shallow: shallow, scroll: false }
         );
       };
     }
