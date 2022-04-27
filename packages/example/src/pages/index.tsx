@@ -3,13 +3,12 @@ import {
   StringParam,
   withDefault,
   BooleanParam,
-  useQueryParams,
-  NextQueryParamProvider
+  useQueryParams
 } from 'next-query-params';
 import {useRouter} from 'next/router';
 import {ChangeEvent} from 'react';
 
-function Index() {
+export default function Index() {
   const [name, setName] = useQueryParam('name', withDefault(StringParam, ''));
   const router = useRouter();
   const [available, setAvailable] = useQueryParam(
@@ -57,13 +56,5 @@ function Index() {
         clear
       </button>
     </div>
-  );
-}
-
-export default function WithParamProvider() {
-  return (
-    <NextQueryParamProvider>
-      <Index />
-    </NextQueryParamProvider>
   );
 }

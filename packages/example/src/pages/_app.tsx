@@ -1,6 +1,11 @@
+import {NextQueryParamProvider} from 'next-query-params';
 import {AppProps} from 'next/app';
 import './_app.css';
 
 export default function App({Component, pageProps}: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <NextQueryParamProvider>
+      <Component {...pageProps} />
+    </NextQueryParamProvider>
+  );
 }
