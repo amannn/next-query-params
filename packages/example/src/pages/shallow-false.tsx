@@ -21,7 +21,7 @@ function ShallowFalsePage(props: ServerSideProps) {
     <div>
       <label>
         Server side query:
-        <p>{JSON.stringify(props.query)}</p>
+        <span>{Object.values(props.query)}</span>
       </label>
       <label>
         Name: <input onChange={onNameInputChange} value={name} /> ({name})
