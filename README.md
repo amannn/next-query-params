@@ -35,8 +35,6 @@ export default function App({Component, pageProps}) {
 
 Please refer to the usage of [`use-query-params`](https://www.npmjs.com/package/use-query-params). This library configures the provider for usage with Next.js and additionally re-exports all modules from `use-query-params` for convenience.
 
-Note that unlike `use-query-params`, this library has all dependencies included and compiled to support IE11.
-
 ```jsx
 import {useQueryParam, StringParam, withDefault} from 'next-query-params';
 
