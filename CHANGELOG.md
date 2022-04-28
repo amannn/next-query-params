@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.2.0 (2022-04-28)
+
+
+### Features
+
+* Allow `shallow` prop on the provider ([#13](https://github.com/amannn/next-query-params/issues/13)) ([71b6ec8](https://github.com/amannn/next-query-params/commit/71b6ec8631af355ef283a0f588e9f80c347176eb))
+
+
+
+
+
 ## 2.1.2 (2021-12-17)
 
 
