@@ -7,11 +7,11 @@ import {QueryParamProvider} from 'use-query-params';
 type Props = Omit<
   ComponentProps<typeof QueryParamProvider>,
   'ReactRouterRoute' | 'reachHistory' | 'history' | 'location'
->;
+> & {shallow?: boolean};
 
 const pathnameRegex = /[^?#]+/u;
 
-function NextQueryParamProvider({children, ...rest}: Props) {
+function NextQueryParamProvider({children, shallow = true, ...rest}: Props) {
   const router = useRouter();
   const match = router.asPath.match(pathnameRegex);
   const pathname = match ? match[0] : router.asPath;
@@ -43,7 +43,7 @@ function NextQueryParamProvider({children, ...rest}: Props) {
         routeFn(
           {pathname: router.pathname, search, hash},
           {pathname, search, hash},
-          {shallow: true, scroll: false}
+          {shallow, scroll: false}
         );
       };
     }
@@ -53,7 +53,7 @@ function NextQueryParamProvider({children, ...rest}: Props) {
       replace: createUpdater(router.replace),
       location
     };
-  }, [location, pathname, router]);
+  }, [location, pathname, router, shallow]);
 
   return (
     <QueryParamProvider {...rest} history={history} location={location}>
