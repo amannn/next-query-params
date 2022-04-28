@@ -1,11 +1,11 @@
 import {StringParam, useQueryParam, withDefault} from 'next-query-params';
 import {ChangeEvent} from 'react';
 
-type ServerSideProps = {
+type Props = {
   query: Record<string, string>;
 };
 
-export default function ShallowTest(props: ServerSideProps) {
+export default function ShallowTest({query}: Props) {
   const [name, setName] = useQueryParam('name', withDefault(StringParam, ''));
 
   function onNameInputChange(event: ChangeEvent<HTMLInputElement>) {
@@ -15,8 +15,7 @@ export default function ShallowTest(props: ServerSideProps) {
   return (
     <div>
       <label>
-        Server side query:
-        <span>{Object.values(props.query)}</span>
+        Server side query: <pre>{JSON.stringify(query, null, 2)}</pre>
       </label>
       <label>
         Name: <input onChange={onNameInputChange} value={name} /> ({name})

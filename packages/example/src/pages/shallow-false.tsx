@@ -1,21 +1,22 @@
+import {GetServerSidePropsContext} from 'next';
 import {NextQueryParamProvider} from 'next-query-params';
 import {ComponentProps} from 'react';
 import ShallowTest from '../components/ShallowTest';
 
-type ServerSideProps = ComponentProps<typeof ShallowTest>;
+type Props = ComponentProps<typeof ShallowTest>;
 
-export default function WithParamProvider(props: ServerSideProps) {
+export default function ShallowFalse({query}: Props) {
   return (
     <NextQueryParamProvider shallow={false}>
-      <ShallowTest query={props.query} />
+      <ShallowTest query={query} />
     </NextQueryParamProvider>
   );
 }
 
-export async function getServerSideProps(props: ServerSideProps) {
+export function getServerSideProps(context: GetServerSidePropsContext) {
   return {
     props: {
-      query: props.query
+      query: context.query
     }
   };
 }

@@ -6,4 +6,4 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/jsx-no-bind': 'off'
   }
-}
+};
