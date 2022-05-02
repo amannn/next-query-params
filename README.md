@@ -60,6 +60,26 @@ export function getServerSideProps() {
 }
 ```
 
+## Configurating the ParamsProvider
+
+
+Currently, the `NextQueryParamProvider` allows specifying if [`shallow`](https://nextjs.org/docs/routing/shallow-routing) routing is desired or not. Server-side functions like `getServerSideProps` will be run again if `shallow` is `false`.
+It's `true` by default.
+
+
+```jsx
+// _app.js
+import {NextQueryParamProvider} from 'next-query-params';
+
+export default function App({Component, pageProps}) {
+  return (
+    <NextQueryParamProvider shallow={false}>
+      <Component {...pageProps} />
+    </NextQueryParamProvider>
+  );
+}
+```
+
 ## Credits
 
 This library is a small wrapper around [`use-query-params`](https://github.com/pbeshai/use-query-params) by [Peter Beshai](https://github.com/pbeshai) and is based on the code that was collaboratively created in [use-query-params#13](https://github.com/pbeshai/use-query-params/issues/13).
