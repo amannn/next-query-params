@@ -1,6 +1,6 @@
 {
   "name": "next-query-params",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "sideEffects": false,
   "license": "MIT",
   "description": "Convenient state management of query parameters in Next.js apps.",
