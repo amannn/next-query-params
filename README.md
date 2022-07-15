@@ -35,8 +35,6 @@ export default function App({Component, pageProps}) {
 
 Please refer to the usage of [`use-query-params`](https://www.npmjs.com/package/use-query-params). This library configures the provider for usage with Next.js and additionally re-exports all modules from `use-query-params` for convenience.
 
-Note that unlike `use-query-params`, this library has all dependencies included and compiled to support IE11.
-
 ```jsx
 import {useQueryParam, StringParam, withDefault} from 'next-query-params';
 
@@ -59,6 +57,23 @@ export function getServerSideProps() {
   return {props: {}};
 }
 ```
+
+## Shallow routing
+
+`NextQueryParamProvider` can be configured to opt-out of [shallow routing](https://nextjs.org/docs/routing/shallow-routing). In this case server-side functions like `getServerSideProps` will be run again when a query parameter changes.
+
+```jsx
+// _app.js
+import {NextQueryParamProvider} from 'next-query-params';
+export default function App({Component, pageProps}) {
+  return (
+    <NextQueryParamProvider shallow={false}>
+      <Component {...pageProps} />
+    </NextQueryParamProvider>
+  );
+}
+```
+
 
 ## Credits
 
