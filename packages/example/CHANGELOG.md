@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.0.0 (2022-07-15)
+
+
+* feat!: Support React 18 and latest Next.js version (#12) ([515a24f](https://github.com/amannn/next-query-params/commit/515a24f864d97ecdbba6de12de490b895d88153c)), closes [#12](https://github.com/amannn/next-query-params/issues/12)
+
+
+### BREAKING CHANGES
+
+* Drop IE11 support
+
+* v3.0.0-alpha.1
+
+
+
+
+
 ## 2.2.1 (2022-05-03)
 
 **Note:** Version bump only for package example

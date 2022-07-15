@@ -1,6 +1,6 @@
 {
   "name": "example",
-  "version": "2.2.1",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "next": "^12.1.5",
-    "next-query-params": "*",
+    "next-query-params": "^3.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
