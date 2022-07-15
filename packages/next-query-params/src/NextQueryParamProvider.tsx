@@ -1,7 +1,5 @@
 import {useRouter} from 'next/router';
 import React, {ComponentProps, memo, useMemo} from 'react';
-// This dependency is bundled
-// eslint-disable-next-line import/no-extraneous-dependencies
 import {QueryParamProvider} from 'use-query-params';
 
 type Props = Omit<

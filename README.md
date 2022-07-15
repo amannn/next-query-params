@@ -60,8 +60,7 @@ export function getServerSideProps() {
 
 ## Shallow routing
 
-Currently, the `NextQueryParamProvider` allows specifying if [`shallow`](https://nextjs.org/docs/routing/shallow-routing) routing is desired or not. Server-side functions like `getServerSideProps` will be run again if `shallow` is `false`.
-It's `true` by default.
+`NextQueryParamProvider` can be configured to opt-out of [shallow routing](https://nextjs.org/docs/routing/shallow-routing). In this case server-side functions like `getServerSideProps` will be run again when a query parameter changes.
 
 ```jsx
 // _app.js
