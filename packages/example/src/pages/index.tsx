@@ -1,12 +1,12 @@
+import {useRouter} from 'next/router';
+import {ChangeEvent} from 'react';
 import {
   useQueryParam,
   StringParam,
   withDefault,
   BooleanParam,
   useQueryParams
-} from 'next-query-params';
-import {useRouter} from 'next/router';
-import {ChangeEvent} from 'react';
+} from 'use-query-params';
 
 export default function Index() {
   const [name, setName] = useQueryParam('name', withDefault(StringParam, ''));

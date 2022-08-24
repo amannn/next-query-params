@@ -53,6 +53,10 @@ it('should clear all params', () => {
 
 it('should clear all params while the hash remains', () => {
   cy.visit('?available=1&name=harry#hash');
+
+  // Wait for hydration
+  cy.wait(100);
+
   cy.get('button:contains("clear")').click();
   assertUrl('#hash');
   assertRouterQuery({});

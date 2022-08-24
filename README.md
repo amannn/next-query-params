@@ -10,33 +10,34 @@ Persisting React state to query parameters is often a good idea:
 2. When using the browser back button, the state of the previous page is restored.
 3. When navigating forward to a page the user was already on, the state is reset.
 
-Note that this library is a small wrapper for [`use-query-params`](https://www.npmjs.com/package/use-query-params) to integrate with Next.js.
+Note that this library is an adapter for [`use-query-params`](https://www.npmjs.com/package/use-query-params) to integrate with Next.js.
 
 ## Installation
 
 ```sh
-npm install next-query-params
+npm install next-query-params use-query-params
 ```
 
 ```jsx
 // _app.js
-import {NextQueryParamProvider} from 'next-query-params';
+import {NextAdapter} from 'next-query-params';
+import {QueryParamProvider} from 'use-query-params';
 
 export default function App({Component, pageProps}) {
   return (
-    <NextQueryParamProvider>
+    <QueryParamProvider adapter={NextAdapter}>
       <Component {...pageProps} />
-    </NextQueryParamProvider>
+    </QueryParamProvider>
   );
 }
 ```
 
 ## Usage
 
-Please refer to the usage of [`use-query-params`](https://www.npmjs.com/package/use-query-params). This library configures the provider for usage with Next.js and additionally re-exports all modules from `use-query-params` for convenience.
+Please refer to the usage of [`use-query-params`](https://www.npmjs.com/package/use-query-params).
 
 ```jsx
-import {useQueryParam, StringParam, withDefault} from 'next-query-params';
+import {useQueryParam, StringParam, withDefault} from 'use-query-params';
 
 export default function IndexPage() {
   const [name, setName] = useQueryParam('name', withDefault(StringParam, ''));
@@ -60,21 +61,26 @@ export function getServerSideProps() {
 
 ## Shallow routing
 
-`NextQueryParamProvider` can be configured to opt-out of [shallow routing](https://nextjs.org/docs/routing/shallow-routing). In this case server-side functions like `getServerSideProps` will be run again when a query parameter changes.
+`NextAdapter` can be configured to opt-out of [shallow routing](https://nextjs.org/docs/routing/shallow-routing). In this case server-side functions like `getServerSideProps` will be run again when a query parameter changes.
 
 ```jsx
 // _app.js
-import {NextQueryParamProvider} from 'next-query-params';
+import {NextAdapter} from 'next-query-params';
+import {QueryParamProvider} from 'use-query-params';
+
+function Adapter(props) {
+  return <NextAdapter {...props} shallow={false} />;
+}
+
 export default function App({Component, pageProps}) {
   return (
-    <NextQueryParamProvider shallow={false}>
+    <QueryParamProvider adapter={Adapter}>
       <Component {...pageProps} />
-    </NextQueryParamProvider>
+    </QueryParamProvider>
   );
 }
 ```
 
-
 ## Credits
 
-This library is a small wrapper around [`use-query-params`](https://github.com/pbeshai/use-query-params) by [Peter Beshai](https://github.com/pbeshai) and is based on the code that was collaboratively created in [use-query-params#13](https://github.com/pbeshai/use-query-params/issues/13).
+This library is an adapter for [`use-query-params`](https://github.com/pbeshai/use-query-params) by [Peter Beshai](https://github.com/pbeshai) and is based on the code that was collaboratively created in [use-query-params#13](https://github.com/pbeshai/use-query-params/issues/13).

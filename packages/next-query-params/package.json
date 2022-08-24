@@ -37,9 +37,7 @@
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "dependencies": {
-    "query-string": "7.1.1",
-    "tslib": "^2.0.3",
-    "use-query-params": "1.2.3"
+    "tslib": "^2.0.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.5",
