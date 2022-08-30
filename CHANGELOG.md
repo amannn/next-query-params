@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.0.0 (2022-08-30)
+
+
+* feat!: Upgrade to use-query-params@v2 (#19) ([40eee87](https://github.com/amannn/next-query-params/commit/40eee8734aebf498955e0bb24353d287877a32ad)), closes [#19](https://github.com/amannn/next-query-params/issues/19)
+
+
+### BREAKING CHANGES
+
+* Since `use-query-params@v2` now supports the concept of adapters, this library now only exports such an adapter. Please update your imports to reference `use-query-params` as only the adapter is now exported from this library.
+
+
+
+
+
 # 3.0.0 (2022-07-15)
 
 
