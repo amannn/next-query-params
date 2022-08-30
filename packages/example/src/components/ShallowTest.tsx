@@ -1,5 +1,5 @@
-import {StringParam, useQueryParam, withDefault} from 'next-query-params';
 import {ChangeEvent} from 'react';
+import {StringParam, useQueryParam, withDefault} from 'use-query-params';
 
 type Props = {
   query: Record<string, string>;

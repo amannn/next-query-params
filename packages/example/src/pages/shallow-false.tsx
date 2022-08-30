@@ -1,15 +1,20 @@
 import {GetServerSidePropsContext} from 'next';
-import {NextQueryParamProvider} from 'next-query-params';
+import {NextAdapter} from 'next-query-params';
 import {ComponentProps} from 'react';
+import {QueryParamProvider} from 'use-query-params';
 import ShallowTest from '../components/ShallowTest';
 
 type Props = ComponentProps<typeof ShallowTest>;
 
+function Adapter(props: ComponentProps<typeof NextAdapter>) {
+  return <NextAdapter {...props} shallow={false} />;
+}
+
 export default function ShallowFalse({query}: Props) {
   return (
-    <NextQueryParamProvider shallow={false}>
+    <QueryParamProvider adapter={Adapter}>
       <ShallowTest query={query} />
-    </NextQueryParamProvider>
+    </QueryParamProvider>
   );
 }
 

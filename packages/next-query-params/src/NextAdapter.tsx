@@ -1,15 +1,15 @@
 import {useRouter} from 'next/router';
-import React, {ComponentProps, memo, useMemo} from 'react';
-import {QueryParamProvider} from 'use-query-params';
-
-type Props = Omit<
-  ComponentProps<typeof QueryParamProvider>,
-  'ReactRouterRoute' | 'reachHistory' | 'history' | 'location'
-> & {shallow?: boolean};
+import {memo, ReactElement, useMemo} from 'react';
+import {PartialLocation, QueryParamAdapter} from 'use-query-params';
 
 const pathnameRegex = /[^?#]+/u;
 
-function NextQueryParamProvider({children, shallow = true, ...rest}: Props) {
+type Props = {
+  shallow?: boolean;
+  children(adapter: QueryParamAdapter): ReactElement | null;
+};
+
+function NextAdapter({children, shallow = true}: Props) {
   const router = useRouter();
   const match = router.asPath.match(pathnameRegex);
   const pathname = match ? match[0] : router.asPath;
@@ -35,9 +35,12 @@ function NextQueryParamProvider({children, shallow = true, ...rest}: Props) {
     }
   }, [router.asPath, router.isReady]);
 
-  const history = useMemo(() => {
+  const adapter: QueryParamAdapter = useMemo(() => {
     function createUpdater(routeFn: typeof router.push) {
-      return function updater({hash, search}: Location) {
+      return function updater({
+        hash,
+        search
+      }: PartialLocation & {hash?: string}) {
         routeFn(
           {pathname: router.pathname, search, hash},
           {pathname, search, hash},
@@ -53,11 +56,7 @@ function NextQueryParamProvider({children, shallow = true, ...rest}: Props) {
     };
   }, [location, pathname, router, shallow]);
 
-  return (
-    <QueryParamProvider {...rest} history={history} location={location}>
-      {children}
-    </QueryParamProvider>
-  );
+  return children(adapter);
 }
 
-export default memo(NextQueryParamProvider);
+export default memo(NextAdapter);
