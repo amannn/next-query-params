@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.1.0 (2022-11-16)
+
+
+### Features
+
+* Suppport Next.js 13 ([#24](https://github.com/amannn/next-query-params/issues/24)) ([790e626](https://github.com/amannn/next-query-params/commit/790e626e857335ccf11c5811b12415e92b422b60))
+
+
+
+
+
 # 4.0.0 (2022-08-30)
 
 
