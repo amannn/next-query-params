@@ -1,6 +1,6 @@
 # next-query-params
 
-![Gzipped size](https://badgen.net/bundlephobia/minzip/next-query-params) ![Tree shaking supported](https://badgen.net/bundlephobia/tree-shaking/next-query-params) ![Build passing](https://img.shields.io/github/workflow/status/amannn/next-query-params/main)
+![Gzipped size](https://badgen.net/bundlephobia/minzip/next-query-params) ![Tree shaking supported](https://badgen.net/bundlephobia/tree-shaking/next-query-params)
 
 > Convenient state management of query parameters in Next.js apps.
 
