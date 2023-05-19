@@ -29,4 +29,9 @@ jobs:
         with:
           start: yarn start
           build: yarn build
-          working-directory: packages/example
+          working-directory: packages/example-app
+      - uses: cypress-io/github-action@v2
+        with:
+          start: yarn start
+          build: yarn build
+          working-directory: packages/example-pages
