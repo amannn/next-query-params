@@ -1,6 +1,6 @@
 {
-  "name": "example",
-  "version": "4.1.0",
+  "name": "example-app",
+  "version": "4.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,10 +10,10 @@
     "test": "start-server-and-test \"yarn start\" http://localhost:3000 \"cypress run\""
   },
   "dependencies": {
-    "next": "^13.0.0",
-    "next-query-params": "^4.1.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "next": "^13.4.3",
+    "next-query-params": "^4.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "use-query-params": "2.0.0"
   },
   "devDependencies": {
@@ -21,6 +21,6 @@
     "eslint": "7.4.0",
     "eslint-config-molindo": "5.0.1",
     "start-server-and-test": "1.14.0",
-    "typescript": "4.5.4"
+    "typescript": "^4.5.4"
   }
 }

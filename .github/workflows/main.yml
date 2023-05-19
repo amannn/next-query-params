@@ -7,19 +7,19 @@ jobs:
     name: Build, lint and test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 14.x
+          node-version: 18.x
       - uses: bahmutov/npm-install@v1
       - run: yarn workspace next-query-params run build
       - run: yarn workspaces run lint
       - run: yarn workspace next-query-params run test
 
-  e2e:
+  e2e-app:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Install dependencies
         uses: cypress-io/github-action@v2
         with:
@@ -29,4 +29,19 @@ jobs:
         with:
           start: yarn start
           build: yarn build
-          working-directory: packages/example
+          working-directory: packages/example-app
+
+  e2e-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        uses: cypress-io/github-action@v2
+        with:
+          runTests: false
+      - run: yarn workspace next-query-params run build
+      - uses: cypress-io/github-action@v2
+        with:
+          start: yarn start
+          build: yarn build
+          working-directory: packages/example-pages

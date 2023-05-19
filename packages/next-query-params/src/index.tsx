@@ -1,1 +1,2 @@
-export {default as NextAdapter} from './NextAdapter';
+// Legacy
+export {default as NextAdapter} from './NextAdapterPages';
