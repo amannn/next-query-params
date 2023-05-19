@@ -27,13 +27,13 @@ jobs:
       - run: yarn workspace next-query-params run build
       - uses: cypress-io/github-action@v2
         with:
-          start: PORT=3001 yarn start
+          start: "PORT=3001 yarn start"
           build: yarn build
           config: baseUrl=http://localhost:3001
           working-directory: packages/example-app
       - uses: cypress-io/github-action@v2
         with:
-          start: PORT=3002 yarn start
+          start: "PORT=3002 yarn start"
           build: yarn build
           config: baseUrl=http://localhost:3002
           working-directory: packages/example-pages
