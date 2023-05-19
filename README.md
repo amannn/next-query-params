@@ -18,14 +18,39 @@ Note that this library is an adapter for [`use-query-params`](https://www.npmjs.
 npm install next-query-params use-query-params
 ```
 
+### App Router
+
 ```jsx
-// _app.js
-import {NextAdapter} from 'next-query-params';
+// app/layout.tsx
+
+'use client';
+
+import NextAdapterApp from 'next-query-params/app';
+import {QueryParamProvider} from 'use-query-params';
+
+export default function RootLayout({children}) {
+  return (
+    <html lang="en">
+      <body>
+        <QueryParamProvider adapter={NextAdapterApp}>
+          {children}
+        </QueryParamProvider>
+      </body>
+    </html>
+  );
+}
+```
+
+### Pages Router
+
+```jsx
+// _app.tsx
+import NextAdapterPages from 'next-query-params/pages';
 import {QueryParamProvider} from 'use-query-params';
 
 export default function App({Component, pageProps}) {
   return (
-    <QueryParamProvider adapter={NextAdapter}>
+    <QueryParamProvider adapter={NextAdapterPages}>
       <Component {...pageProps} />
     </QueryParamProvider>
   );
@@ -59,13 +84,13 @@ export function getServerSideProps() {
 }
 ```
 
-## Shallow routing
+## Shallow routing (Pages Router-only)
 
 `NextAdapter` can be configured to opt-out of [shallow routing](https://nextjs.org/docs/routing/shallow-routing). In this case server-side functions like `getServerSideProps` will be run again when a query parameter changes.
 
 ```jsx
-// _app.js
-import {NextAdapter} from 'next-query-params';
+// _app.tsx
+import NextAdapterPages from 'next-query-params/pages';
 import {QueryParamProvider} from 'use-query-params';
 
 function Adapter(props) {

@@ -4,7 +4,7 @@
   "sideEffects": false,
   "license": "MIT",
   "description": "Convenient state management of query parameters in Next.js apps.",
-  "author": "Jan Amann <jan@amann.me>",
+  "author": "Jan Amann <jan@amann.work>",
   "repository": {
     "type": "git",
     "url": "https://github.com/amannn/next-query-params"
@@ -20,9 +20,9 @@
   ],
   "scripts": {
     "start": "tsdx watch",
-    "build": "tsdx build",
+    "build": "tsdx build && tsc",
     "test": "echo \"No tests yet\"",
-    "lint": "eslint src && tsc",
+    "lint": "eslint src && tsc --noEmit",
     "prepublishOnly": "yarn test && yarn lint && yarn build && cp ../../README.md ."
   },
   "main": "dist/index.js",
@@ -30,8 +30,15 @@
   "typings": "dist/index.d.ts",
   "files": [
     "README.md",
-    "dist"
+    "dist",
+    "app.d.ts",
+    "pages.d.ts"
   ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./app": "./dist/NextAdapterApp.js",
+    "./pages": "./dist/NextAdapterPages.js"
+  },
   "peerDependencies": {
     "next": "^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0",
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
@@ -41,14 +48,14 @@
     "tslib": "^2.0.3"
   },
   "devDependencies": {
-    "@types/react": "^18.0.5",
+    "@types/react": "^18.2.6",
     "eslint": "7.4.0",
     "eslint-config-molindo": "5.0.1",
-    "next": "^12.1.5",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "next": "^13.4.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "tsdx": "^0.14.1",
-    "typescript": "^4.1.2",
+    "typescript": "^4.5.4",
     "use-query-params": "2.0.0"
   }
 }
