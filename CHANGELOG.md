@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.2.0 (2023-05-19)
+
+
+### Features
+
+* Add support for App Router ([#27](https://github.com/amannn/next-query-params/issues/27)) ([161604f](https://github.com/amannn/next-query-params/commit/161604fe0e518e05152ce9789a68661fcc28df81))
+
+
+
+
+
 # 4.1.0 (2022-11-16)
 
 
