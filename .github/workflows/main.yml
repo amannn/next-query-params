@@ -16,7 +16,7 @@ jobs:
       - run: yarn workspaces run lint
       - run: yarn workspace next-query-params run test
 
-  e2e:
+  e2e-app:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -27,13 +27,21 @@ jobs:
       - run: yarn workspace next-query-params run build
       - uses: cypress-io/github-action@v2
         with:
-          start: "PORT=3001 yarn start"
+          start: yarn start
           build: yarn build
-          config: baseUrl=http://localhost:3001
           working-directory: packages/example-app
+
+  e2e-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        uses: cypress-io/github-action@v2
+        with:
+          runTests: false
+      - run: yarn workspace next-query-params run build
       - uses: cypress-io/github-action@v2
         with:
-          start: "PORT=3002 yarn start"
+          start: yarn start
           build: yarn build
-          config: baseUrl=http://localhost:3002
           working-directory: packages/example-pages
