@@ -75,13 +75,6 @@ export default function IndexPage() {
     <p>My name is <input value={name} onChange={onNameInputChange} /></p>
   );
 }
-
-// Note that if query parameters affect the server-rendered HTML of the page,
-// you should define this function. Statically generated pages only have
-// access to query parameters on the client side.
-export function getServerSideProps() {
-  return {props: {}};
-}
 ```
 
 ## Shallow routing (Pages Router-only)
