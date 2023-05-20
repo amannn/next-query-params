@@ -34,7 +34,7 @@ function NextAdapter({children}: Props) {
         router.push(getUrl(location));
       },
       location: {
-        search: searchParams.toString()
+        search: searchParams.toString() ? `?${searchParams}` : "",
       }
     };
   }, [searchParams, pathname, router]);
