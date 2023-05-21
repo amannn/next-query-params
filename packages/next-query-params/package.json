@@ -36,8 +36,8 @@
   ],
   "exports": {
     ".": "./dist/index.js",
-    "./app": "./dist/NextAdapterApp.js",
-    "./pages": "./dist/NextAdapterPages.js"
+    "./app": "./dist/src/NextAdapterApp.js",
+    "./pages": "./dist/index.js"
   },
   "peerDependencies": {
     "next": "^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0",
