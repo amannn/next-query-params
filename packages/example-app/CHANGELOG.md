@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.2.1 (2023-05-21)
+
+
+### Bug Fixes
+
+* Fix cjs export for pages adapter ([#30](https://github.com/amannn/next-query-params/issues/30)) ([0ebd81d](https://github.com/amannn/next-query-params/commit/0ebd81d77d78760a4d06c727f192946d35b6d0d9))
+
+
+
+
+
 # 4.2.0 (2023-05-19)
 
 

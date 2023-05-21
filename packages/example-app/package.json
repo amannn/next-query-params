@@ -1,6 +1,6 @@
 {
   "name": "example-app",
-  "version": "4.2.0",
+  "version": "4.2.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "next": "^13.4.3",
-    "next-query-params": "^4.2.0",
+    "next-query-params": "^4.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "use-query-params": "2.0.0"
