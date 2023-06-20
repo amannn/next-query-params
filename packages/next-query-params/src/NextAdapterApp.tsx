@@ -1,7 +1,7 @@
 'use client';
 
 import {usePathname, useRouter, useSearchParams} from 'next/navigation';
-import {memo, ReactElement, useMemo} from 'react';
+import {ReactElement, useMemo} from 'react';
 import {PartialLocation, QueryParamAdapter} from 'use-query-params';
 
 type Props = {
@@ -42,4 +42,4 @@ function NextAdapter({children}: Props) {
   return children(adapter);
 }
 
-export default memo(NextAdapter);
+export default NextAdapter;
