@@ -1,5 +1,5 @@
 import {useRouter} from 'next/router';
-import {memo, ReactElement, useMemo} from 'react';
+import {ReactElement, useMemo} from 'react';
 import {PartialLocation, QueryParamAdapter} from 'use-query-params';
 
 const pathnameRegex = /[^?#]+/u;
@@ -59,4 +59,4 @@ function NextAdapter({children, shallow = true}: Props) {
   return children(adapter);
 }
 
-export default memo(NextAdapter);
+export default NextAdapter;
