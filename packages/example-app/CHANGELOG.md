@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.2.2 (2023-06-20)
+
+
+### Bug Fixes
+
+* Remove `memo` wrappers to address a TypeScript issue ([#34](https://github.com/amannn/next-query-params/issues/34) by [@jmonster](https://github.com/jmonster)) ([1f73680](https://github.com/amannn/next-query-params/commit/1f7368048554744847ff589c55dcbc95aa7cf1ee))
+
+
+
+
+
 ## 4.2.1 (2023-05-21)
 
 
