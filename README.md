@@ -10,7 +10,7 @@ Persisting React state to query parameters is often a good idea:
 2. When using the browser back button, the state of the previous page is restored.
 3. When navigating forward to a page the user was already on, the state is reset.
 
-Note that this library is an adapter for [`use-query-params`](https://www.npmjs.com/package/use-query-params) to integrate with Next.js.
+This library is an adapter for [`use-query-params`](https://www.npmjs.com/package/use-query-params) to integrate with Next.js.
 
 ## Installation
 
@@ -101,4 +101,4 @@ export default function App({Component, pageProps}) {
 
 ## Credits
 
-This library is an adapter for [`use-query-params`](https://github.com/pbeshai/use-query-params) by [Peter Beshai](https://github.com/pbeshai) and is based on the code that was collaboratively created in [use-query-params#13](https://github.com/pbeshai/use-query-params/issues/13).
+This library is an adapter for [`use-query-params`](https://github.com/pbeshai/use-query-params) by [Peter Beshai](https://github.com/pbeshai) and was originally based on the code that was collaboratively created in [use-query-params#13](https://github.com/pbeshai/use-query-params/issues/13).
