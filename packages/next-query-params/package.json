@@ -36,8 +36,14 @@
   ],
   "exports": {
     ".": "./dist/index.js",
-    "./app": "./dist/app.js",
-    "./pages": "./dist/pages.js"
+    "./app": {
+      "types": "./app.d.ts",
+      "default": "./dist/app.js"
+    },
+    "./pages": {
+      "types": "./pages.d.ts",
+      "default": "./dist/pages.js"
+    }
   },
   "peerDependencies": {
     "next": "^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0",

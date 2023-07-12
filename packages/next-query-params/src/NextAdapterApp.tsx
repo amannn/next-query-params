@@ -8,7 +8,7 @@ type Props = {
   children(adapter: QueryParamAdapter): ReactElement | null;
 };
 
-export default function NextAdapter({children}: Props) {
+export default function NextAdapterApp({children}: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();

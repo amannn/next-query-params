@@ -1,1 +1,3 @@
-export { default } from './dist/app.d.ts';
+import NextAdapterApp from './dist/app.d.ts';
+
+export = NextAdapterApp;
