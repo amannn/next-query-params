@@ -1,1 +1,1 @@
-export { default } from './dist/src/NextAdapterApp';
+export { default } from './dist/app.d.ts';

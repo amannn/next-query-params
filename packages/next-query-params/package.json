@@ -19,14 +19,14 @@
     "hooks"
   ],
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build && tsc",
+    "start": "dts watch",
+    "build": "dts build --entry src/index.tsx  --entry src/app.tsx --entry src/pages.tsx",
     "test": "echo \"No tests yet\"",
     "lint": "eslint src && tsc --noEmit",
     "prepublishOnly": "yarn test && yarn lint && yarn build && cp ../../README.md ."
   },
   "main": "dist/index.js",
-  "module": "dist/next-query-params.esm.js",
+  "module": "dist/index.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
     "README.md",
@@ -36,8 +36,8 @@
   ],
   "exports": {
     ".": "./dist/index.js",
-    "./app": "./dist/src/NextAdapterApp.js",
-    "./pages": "./dist/index.js"
+    "./app": "./dist/app.js",
+    "./pages": "./dist/pages.js"
   },
   "peerDependencies": {
     "next": "^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0",
@@ -49,12 +49,12 @@
   },
   "devDependencies": {
     "@types/react": "^18.2.6",
+    "dts-cli": "^1.4.0",
     "eslint": "7.4.0",
     "eslint-config-molindo": "5.0.1",
     "next": "^13.4.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tsdx": "^0.14.1",
     "typescript": "^4.5.4",
     "use-query-params": "2.0.0"
   }

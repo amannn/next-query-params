@@ -1,1 +1,1 @@
-export { default } from './dist/src/NextAdapterPages';
+export { default } from './dist/pages.d.ts';
