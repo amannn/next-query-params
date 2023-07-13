@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.2.3 (2023-07-13)
+
+
+### Bug Fixes
+
+* Add CJS build for App Router entry point ([#36](https://github.com/amannn/next-query-params/issues/36)) ([5e034cf](https://github.com/amannn/next-query-params/commit/5e034cf567b1ee3d164b8f8ac7355cc224647d1f))
+
+
+
+
+
 ## 4.2.2 (2023-06-20)
 
 
