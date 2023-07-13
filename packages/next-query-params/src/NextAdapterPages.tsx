@@ -9,7 +9,7 @@ type Props = {
   children(adapter: QueryParamAdapter): ReactElement | null;
 };
 
-function NextAdapter({children, shallow = true}: Props) {
+export default function NextAdapterPages({children, shallow = true}: Props) {
   const router = useRouter();
   const match = router.asPath.match(pathnameRegex);
   const pathname = match ? match[0] : router.asPath;
@@ -58,5 +58,3 @@ function NextAdapter({children, shallow = true}: Props) {
 
   return children(adapter);
 }
-
-export default NextAdapter;
