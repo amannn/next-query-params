@@ -28,10 +28,10 @@ export default function NextAdapterApp({children}: Props) {
 
     return {
       replace(location: PartialLocation) {
-        router.replace(getUrl(location));
+        router.replace(getUrl(location), {scroll: false});
       },
       push(location: PartialLocation) {
-        router.push(getUrl(location));
+        router.push(getUrl(location), {scroll: false});
       },
       location: {
         search: searchParams.toString()
