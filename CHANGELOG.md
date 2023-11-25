@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0 (2023-11-25)
+
+
+### Bug Fixes
+
+* Do not scroll to top on query param change with App Router. If you need to retain the previous behavior, you can scroll to the top _additionally_, after changing a query param ([#42](https://github.com/amannn/next-query-params/issues/42) by [@gregor10](https://github.com/gregor10)) ([0f5fb5c](https://github.com/amannn/next-query-params/commit/0f5fb5c465eb712f03d2bfc9897afe72fd2f42d2))
+
+
+### BREAKING CHANGES
+
+* Changing a query param with the App Router no longer results in the app scrolling to the top.
+
+
+
+
+
 ## 4.3.1 (2023-11-25)
 
 **Note:** Version bump only for package root
