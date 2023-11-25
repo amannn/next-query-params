@@ -42,7 +42,7 @@ export default function Index() {
 
   return (
     <div>
-      <div style={{height: '100vh'}}>
+      <div style={{height: '100vh', border: '1px solid #ccc'}}>
         This div height is big enough to push input field outside of visible
         area.
       </div>

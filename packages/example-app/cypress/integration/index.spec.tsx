@@ -68,3 +68,24 @@ it('should add query params correctly when a hash is already active', () => {
   assertUrl('?available=1#hash');
   assertRouterQuery({available: '1'});
 });
+
+it('should not change window scroll position when typing something into input field', () => {
+  cy.visit('/scrollable');
+
+  let initialScrollPosition;
+  cy.window().then((win) => {
+    initialScrollPosition = win.scrollY;
+  });
+
+  cy.get('label:contains("Name:") input').type('a');
+
+  let finalScrollPosition;
+  cy.window().then((win) => {
+    finalScrollPosition = win.scrollY;
+  });
+
+  cy.wrap(initialScrollPosition).should('equal', finalScrollPosition);
+
+  assertUrl('scrollable?name=a');
+  assertRouterQuery({name: 'a'});
+});
