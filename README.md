@@ -1,5 +1,8 @@
 # next-query-params
 
+> [!WARNING]  
+> This project is in maintainence mode now. I've originally created it for the Pages Router, but with the introduction of the App Router there are now better patterns for handling query params in my opinion. Personally, I parse `searchParams` in pages with [`zod`](https://www.npmjs.com/package/zod). If you need something more advanced, you might want to have a look at [nuqs](https://nuqs.47ng.com/).
+
 ![Gzipped size](https://badgen.net/bundlephobia/minzip/next-query-params) ![Tree shaking supported](https://badgen.net/bundlephobia/tree-shaking/next-query-params)
 
 > Convenient state management of query parameters in Next.js apps.
