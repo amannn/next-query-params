@@ -11,7 +11,7 @@ type Props = {
 
 export default function NextAdapterPages({children, shallow = true}: Props) {
   const router = useRouter();
-  const match = router.asPath.match(pathnameRegex);
+  const match = router.isReady ? router.asPath.match(pathnameRegex) : null;
   const pathname = match ? match[0] : router.asPath;
 
   const location = useMemo(() => {
