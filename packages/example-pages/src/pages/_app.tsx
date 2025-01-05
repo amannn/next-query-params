@@ -1,5 +1,5 @@
-import NextAdapterPages from 'next-query-params/pages';
 import {AppProps} from 'next/app';
+import NextAdapterPages from 'next-query-params/pages';
 import {QueryParamProvider} from 'use-query-params';
 import './_app.css';
 

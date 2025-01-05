@@ -1,5 +1,5 @@
 import {GetServerSidePropsContext} from 'next';
-import {NextAdapter} from 'next-query-params';
+import NextAdapter from 'next-query-params/pages';
 import {ComponentProps} from 'react';
 import {QueryParamProvider} from 'use-query-params';
 import ShallowTest from '../components/ShallowTest';
