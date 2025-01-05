@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.1.0 (2025-01-05)
+
+
+### Features
+
+* Support Next.js 15 and React 19 ([#48](https://github.com/amannn/next-query-params/issues/48)) ([3d02eea](https://github.com/amannn/next-query-params/commit/3d02eea1b594964f24122a23e364f14c27bc0699))
+
+
+
+
+
 ## 5.0.1 (2024-08-28)
 
 **Note:** Version bump only for package next-query-params
